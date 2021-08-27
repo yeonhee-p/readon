@@ -30,6 +30,8 @@ public class MemberController {
 		service.insert(mvo);
 		return "redirect:/index";
 	}
-	
-
+	/*@PostMapping("login")
+	public String memberLogin(MemberVO mvo) {
+		
+	}*/
 }

@@ -110,28 +110,24 @@
                     <ul>
                         <li>
                             <a href="">
-                                <img src="../resources/img/best_1.jpg" alt="" width="200px" height="300px">
-                                
+                                <img src="../resources/img/book_img/l9791165343729.jpg" alt="" width="200px" height="300px">                                
                             </a> 
                             <p>
-                            	<strong>미드나잇 라이브러리</strong>
-                            	<br>매트 헤이그
+                            	<strong>달러구트 꿈 백화점</strong>
+                            	<br>이미예
                             	<br><br>
-                            	<b>밤 12시, 죽기 바로 전에만 열리는 마법의 도서관에서<br>
-                            	인생의 두 번째 기회를 드립니다</b>
+                            	<b>달러구트 꿈 백화점, 그 두번째 이야기</b><br>잠들어야만 입장 가능한 '달러구트 꿈 백화점'으로<br>여러분을 초대합니다.
                             </p>
                         </li>
                         <li>
                             <a href="">
-                                <img src="../resources/img/best_2.jpg" alt="" width="200px" height="300px">
-                               
+                                <img src="../resources/img/book_img/l9791191056853.jpg" alt="생각을 바꾸는 생각들" width="200px" height="300px">                
                             </a> 
                             <p>
-                             	<strong>그러라 그래</strong>
-                             	<br>양희은
+                             	<strong>생각을 바꾸는 생각들</strong>
+                             	<br>비카스 샤
                              	<br><br>
-                            	<b>"어떻게 인생이 쉽기만 할까?<br>
-                            	그저 좋아하는걸 하고,<br> 좋아하는 사람을 두고 나답게 살면 그만이지 "</b>
+                            	<b>유발 하라리부터 조던 피터슨까지 <br>이 시대 지성 134인과의 지적인 대화<br>"이것이야말로 오늘날의 교양이다"</b>
                             </p>
                         </li>
            
@@ -140,31 +136,31 @@
                 
                 
 				
-				 <div class="book report">
+				 <div class="book_report">
                     <h2 id="title">독서노트</h2>
                     <ul>
                         <li>
-                            <a href="">
-                                <img src="../resources/img/best_1.jpg" alt="" width="200px" height="300px">
-	                            <p>
-	                            	<strong>미드나잇 라이브러리</strong>
-	                            	<br>매트 헤이그
-	                            	<br><br>
-	                            	<b> </b>
-	                            </p>
-                            </a> 
-                        </li>
+                            <a href=""><img src="../resources/img/book_img/l9791191248265.jpg" alt="오늘의 단어"> </a> 
+	                        <p>
+                        		<strong>생활견 키키와 반려인 진아의 오늘의 단어</strong><br>
+                            	임진아<br><br>
+                            	<b>"오늘은 어떤 단어를 골라볼까?"</b><br><br>
+                            	사계절과 그 계절에 어울리는 단어를 만화로 글로 생각하고 있으면 마음이 포근해지는 느낌이에요.-키키님<br>
+                            	저는 그 중에서도 여름의 커피가 제일 와닿았어요. 밤에 커피마시고 싶어질 때를 위해서 디카페인 마시는 모습이요. -희은님 
+                            </p>
+						</li>
                         <li>
                             <a href="">
-                                <img src="../resources/img/best_2.jpg" alt="" width="200px" height="300px">
-                               
+                                <img src="../resources/img/book_img/l9788934985051.jpg" alt="햇빛은 찬란하고 인생은 귀하니까요: 밀라논나 이야기">
                             </a> 
                             <p>
-                             	<strong>그러라 그래</strong>
-                             	<br>양희은
+                             	<strong>햇빛은 찬란하고 인생은 귀하니까요: 밀라논나 이야기</strong><br>
+                             	장명숙
                              	<br><br>
-                            	<b>"어떻게 인생이 쉽기만 할까?<br>
-                            	그저 좋아하는걸 하고,<br> 좋아하는 사람을 두고 나답게 살면 그만이지 "</b>
+                            	<b>"누구나 다 주인공이에요"</b><br><br>
+                            	지금 내게 필요한 담백한 응원.-영원님<br>
+                            	하루하루 나에게 충실하게 나를 지키며 살아가자고 다짐하게 만드네요. -이다님<br>
+                            	유튜브보다도 책으로 글로 접하는 밀라논나님의 생각이 더 따스하게 느껴져요 -가애님
                             </p>
                         </li>
            

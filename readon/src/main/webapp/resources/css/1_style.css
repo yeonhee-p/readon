@@ -58,7 +58,9 @@ a{
 .logo img{
     width: 100px;
 }
-
+.container{
+	width:100%;
+}
 .mainSlide{
     width: 100%;
     margin-bottom: 50px;
@@ -115,7 +117,7 @@ a{
 
 .best ul{
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between;
 }
 
 .best ul li a{
@@ -147,7 +149,27 @@ a{
 	line-height: 30px;
 }
 
+.book_report ul li{
+    display: flex;
+    align-items: center;
+    border:1px solid #999;
+    border-radius:10px;
+    margin-top: 10px;
+}
+.book_report img{
+	width: 200px; 
+	height: 300px;
+	border-radius: 20px;
+	padding: 10px 10px;
+}
+.book_report ul li p{
+	margin-left: 20px;
+	align-items: center;
+}
 
+.book_report ul li strong{
+	font-size:20px;
+}
 
 
 
