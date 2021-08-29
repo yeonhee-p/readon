@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+	input{
+	 width:200px;
+	}
+</style>
 </head>
 <body>
 	<form action="insert" method="post">
