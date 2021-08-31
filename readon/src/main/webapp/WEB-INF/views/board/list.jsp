@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,7 @@
 			<td>${board.bno}</td>
 			<td><a href="get?bno=${board.bno}">${board.title} [${board.replycnt}]</a></td>
 			<td>${board.writer}</td>
-			<td>${board.regdate}</td>
+			<td><fmt:formatDate value="${board.regdate}" pattern="yyyy-MM-dd"/></td>
 		</tr>
 		</c:forEach>
 		
@@ -60,8 +61,10 @@
 		<input type="text" name="keyword">
 		
 		<input type="submit" value="검색">
+		<input type="submit" value="글쓰기" formaction="register">
 		</form>
 	</div>
+	
 	
 	
 	

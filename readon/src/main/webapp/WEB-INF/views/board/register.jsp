@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,7 @@
 <body>
 <h1>글쓰기</h1>
 <form role="form" action="register" method="post">
+	<c:if test="${msg == null}">
 	<table>
 		<tr>
 			<td>제목</td>
@@ -24,7 +26,7 @@
 		</tr>
 		<tr>
 			<td>작성자</td>
-			<td><input type="text" name="writer"></td>
+			<td><input type="text" name="writer" value="${member.id }" readonly></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="글쓰기"></td>
@@ -37,6 +39,12 @@
 		<ul>
 		</ul>
 	</div>
+	</c:if>
+	<c:if test="${msg == false }">
+		<p>로그인 하셔야 글을 작성할 수 있습니다.</p>
+		<p><a href="http://localhost:8080/member/login">로그인</a></p>
+	</c:if>
 </form>
+
 </body>
 </html>

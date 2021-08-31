@@ -18,14 +18,16 @@
                     <ul class="gnb_menu">
                         <li><a href="#">카테고리</a></li>
                         <li><a href="#">베스트</a></li>
-                        <li><a href="#">독서노트</a></li>
+                        <li><a href="http://localhost:8080/board/list">독서노트</a></li>
                         <li><a href="#">마이페이지</a></li>
                     </ul>
                 </nav> <!--.gnb-->
         
                 <div class="utils">
                     <ul class="ut">
+                    	<li>${member.id}</li><!-- 로그인 시 아이디 -->
                         <li><a href="http://localhost:8080/member/login">로그인</a></li>
+                        <li><a href="http://localhost:8080/member/logout">로그아웃</a></li>
                         <li><a href="#">주문배송</a></li>
                         <li><a href="#">고객센터</a></li>
                     </ul> <!--.ut-->
@@ -105,6 +107,7 @@
            
 
 
+
 				 <div class="today">
                     <h2 id="title">오늘의 책</h2>
                     <ul>
@@ -165,9 +168,10 @@
                         </li>
            
                     </ul>
-                </div><!--.today-->
+                </div><!--.book_report-->
                 
 
+                   
                      
                     
             

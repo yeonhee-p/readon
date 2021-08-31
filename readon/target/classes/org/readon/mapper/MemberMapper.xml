@@ -10,7 +10,7 @@
   	<delete id="delete">
   		delete from tbl_member where id=#{id};
   	</delete>
-  	<select id="">
-  		
+  		<select id="login" resultType="org.zerock.domain.MemberVO">
+  		select * from tbl_member where id=#{id} and password=#{password}
   	</select>
   </mapper>

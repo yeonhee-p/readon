@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,12 +58,15 @@
 	            </tr>
 	            <tr>
 	                <td colspan="2">
-	                    <input type="submit" value="로그인" formaction="index" class="login_btn" >
+	                    <input type="submit" value="로그인" formaction="login" class="login_btn" >
 	                    <input type="submit" value="회원가입" formaction="join" class="login_btn">
 	                </td>
 	            </tr>
 	        </table>
         </form>
+       	<c:if test="${msg == false }">
+        	<p style="color:#f00;">로그인에 실패했습니다.<br>아이디 또는 패스워드를 확인해주세요.</p>
+        </c:if>
     </div>
 </body>
 </html>

@@ -1,6 +1,8 @@
 package org.readon.controller;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +30,13 @@ public class BoardController {
 	@Autowired//@Autowired(BoardService service new BoardService();)
 	private BoardService service;
 	@GetMapping("register")// 용도 : 글쓰기 화면
-	public void register() {
+	public void register(HttpSession session, Model model) {
 		logger.info("register");
+		Object loginInfo = session.getAttribute("member");
+		if(loginInfo == null) {
+			model.addAttribute("msg", false);
+		}
+		System.out.print(loginInfo);
 	}
 	@PostMapping("register")// 용도 : 글쓰기 화면에서 글쓰기 버튼을 클릭
 	public String registerPost(BoardVO board) {

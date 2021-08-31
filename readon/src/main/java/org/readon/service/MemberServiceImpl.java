@@ -15,9 +15,12 @@ public class MemberServiceImpl implements MemberService{
 	
 	public void insert(MemberVO mvo) {
 		logger.info("MemberService insert");
-		mapper.insert(mvo);
-		
+		mapper.insert(mvo);	
 	}
+	public MemberVO login(MemberVO mvo) {
+		return mapper.login(mvo);
+	}
+	
 	
 	
 	
