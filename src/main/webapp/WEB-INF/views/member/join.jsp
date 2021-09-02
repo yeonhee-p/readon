@@ -17,8 +17,9 @@
 	<tr>
 		<td>아이디</td>
 		<td>
-			<input type="text" name="id" id="id" class="input_box" autofocus placeholder="영문자+숫자 조합 4~12자리"><br>
-			<label id="idcheck" class="check"></label>
+			<input type="text" name="id" id="id" class="input_box" autofocus placeholder="영문자+숫자 조합 4~12자리">
+			<input type="button" id="id_check" class="join_btn" value="중복확인"><br>
+			<label id="idcheck" class="check"></label><span class="msg"></span>
 		</td>
 	</tr>
 	<tr>
@@ -60,7 +61,7 @@
 	</tr>
 	<tr>
 		<td colspan="2" class="join_btns">
-			<input type="submit" value="회원가입" class="join_btn">
+			<input type="submit" value="회원가입" class="join_btn" id="submit" disabled>
 			<input type="reset" value="취소" class="join_btn">
 		</td>
 	</tr>

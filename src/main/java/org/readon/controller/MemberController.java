@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.readon.controller.MemberController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -42,7 +44,21 @@ public class MemberController {
 			session.setAttribute("member", login);
 			return "redirect:/index";
 		}
+	}
+	
+	@ResponseBody
+	@PostMapping("id_check")
+	public int idCheckPost(HttpServletRequest req) {
+		logger.info("post idCheck");
 		
+		String id=req.getParameter("id");//사용자가 입력한 id
+		MemberVO id_check = service.id_check(id);//중복확인
+		int result = 0;
+		if(id_check != null) {
+			result = 1;
+		}
+		logger.info("result:"+result);
+		return result;
 	}
 	@GetMapping("logout")//로그아웃
 	public String logout(HttpSession session) {

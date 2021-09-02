@@ -4,6 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+
 import org.readon.domain.BookVO;
 import org.readon.mapper.BookMapper;
 
@@ -16,11 +19,14 @@ public class BookServiceImpl implements BookService {
 		logger.info("BookServiceImpl create");
 		bmapper.insert(vo);
 	}
-	
-	/*public BookVO detail(int book_id) {
+	public BookVO detail(int book_id) {
 		return bmapper.detail(book_id);
 	}
-	public BookVO update(BookVO book) {
+	// 책 목록
+	public ArrayList<BookVO> getList(){
+		return bmapper.getList();
+	}
+	/*public BookVO update(BookVO book) {
 		return bmapper.update(book);
 	}*/
 }

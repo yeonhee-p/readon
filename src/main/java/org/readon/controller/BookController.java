@@ -30,12 +30,18 @@ public class BookController {
 		bookService.create(vo);
 		//return "redirect:/book/create";
 	}
-	/*@GetMapping("detail")
+	@GetMapping("detail")
 	public void detail(@RequestParam("book_id") int book_id, Model model) {
 		logger.info("BookController detail");
 		model.addAttribute("book",bookService.detail(book_id));
 	}
-	@PostMapping("update")
+	@GetMapping("list")
+	public void list(Model model) {
+		logger.info("book list");
+		model.addAttribute("list", bookService.getList());
+	}
+	
+	/*@PostMapping("update")
 	public String update(BookVO vo, RedirectAttributes rttr) {
 		logger.info("BookController update");
 		bookService.update(vo);

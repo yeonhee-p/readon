@@ -10,11 +10,15 @@
 </insert>
 
 <select id="detail" resultType="org.readon.domain.BookVO">
-	    select * from tbl_book where book_id=2
+	    select * from tbl_book where book_id=#{book_id}
 </select>
 
 <update id="update">
 	update tbl_book 
 	set title=#{title}, writer=#{writer},category=#{category},price=#{price} where book_id=#{book_id}
 </update>
+<select id="getList" resultType="org.readon.domain.BookVO">
+	select * from tbl_book
+</select>
+
 </mapper>

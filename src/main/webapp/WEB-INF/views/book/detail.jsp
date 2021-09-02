@@ -12,14 +12,15 @@
 </head>
 <body>
   <h1>책 상세</h1>
-	<!-- <p>제목 : <input type="text" name="title" value="${book.title }"> </p> -->
-	 <img src="${book.title }" alt="" width="200px" height="300px">
+	<img src="${book.book_img}" alt="" width="200px" height="300px">
+	<p>제목 : <input type="text" name="book_title" value="${book.book_title }"></p>
+	<p>저자 : <input type="text" name="book_writer" value="${book.book_writer }"> </p>
+	<p>출판사 : <input type="text" name="book_pub" value="${book.book_pub }"> </p>
+	<p>출판일 : <input type="text" name=book_pubdate value="${book.book_pubdate }"> </p>
+	<p>정보 : <input type="text" name="book_info" value="${book.book_info }"> </p>
+	<p>카테고리 : <input type="text" name="book_cat" value="${book.book_cat }"></p>
+	<p>가격  : <input type="text" name="book_price" value="${book.book_price }"></p>
 	
-	<p>저자 : <input type="text" name="writer" value="${book.writer }"> </p>
-	<p>카테고리 : <input type="text" name="category" value="${book.category }"></p>
-	<p>가격  : <input type="text" name="price" value="${book.price }"></p>
-	<p>입력일 : ${book.insert_date}</p>
-	<p><input type="submit" value="저장"></p>
   <form method="POST">
    <input type="hidden" name="book_id" value="${book.book_id}" />
    <input type="submit" formaction="update" value="수정" />

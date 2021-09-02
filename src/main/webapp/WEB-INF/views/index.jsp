@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="org.readon.domain.MemberVO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,10 @@
   <!--bootstrap 밑에 css 링크작성하기-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="../resources/css/1_style.css">
+    <!-- jquery 파일 연결 -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- javascript 파일(index.js) 연결 -->
+	<script src="../resources/js/index.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -22,12 +27,15 @@
                         <li><a href="#">마이페이지</a></li>
                     </ul>
                 </nav> <!--.gnb-->
-        
+        		<%MemberVO vo = (MemberVO)session.getAttribute("member"); %>
                 <div class="utils">
                     <ul class="ut">
-                    	<li>${member.id}</li><!-- 로그인 시 아이디 -->
+                    <li>${member.id}</li><!-- 로그인 시 아이디 -->
+                    	<% if(vo == null){ %>
                         <li><a href="http://localhost:8080/member/login">로그인</a></li>
+                        <%}else{%>
                         <li><a href="http://localhost:8080/member/logout">로그아웃</a></li>
+                       	<% } %>   
                         <li><a href="#">주문배송</a></li>
                         <li><a href="#">고객센터</a></li>
                     </ul> <!--.ut-->
@@ -72,31 +80,31 @@
                     <h2 id="title">Best</h2>
                     <ul>
                         <li>
-                            <a href="">
+                            <a href="http://localhost:8080/book/detail?book_id=21">
                                 <img src="../resources/img/best_1.jpg" alt="" width="200px" height="300px">
                                 <p>미드나잇 라이브러리<br>매트 헤이그</p>
                             </a> 
                         </li>
                         <li>
-                            <a href="">
+                            <a href="http://localhost:8080/book/detail?book_id=44">
                                 <img src="../resources/img/best_2.jpg" alt="" width="200px" height="300px">
                                 <p>그러라 그래<br>양희은</p>
                             </a> 
                         </li>
                         <li>
-                            <a href="">
+                            <a href="http://localhost:8080/book/detail?book_id=45">
                                 <img src="../resources/img/best_3.jpg" alt="" width="200px" height="300px">
                                 <p>공간의 미래<br>유현준</p>
                             </a> 
                         </li>
                         <li>
-                            <a href="">
+                            <a href="http://localhost:8080/book/detail?book_id=46">
                                 <img src="../resources/img/best_4.jpg" alt="" width="200px" height="300px">
                                 <p>지구인만큼 지구를 사랑할 순 없어<br>정세랑</p>
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="http://localhost:8080/book/detail?book_id=5">
                                 <img src="../resources/img/best_5.jpg" alt="" width="200px" height="300px">
                                 <p>소크라테스 익스프레스<br>에릭 와이너</p>
                             </a>
@@ -112,7 +120,7 @@
                     <h2 id="title">오늘의 책</h2>
                     <ul>
                         <li>
-                            <a href="">
+                            <a href="http://localhost:8080/book/detail?book_id=16">
                                 <img src="../resources/img/book_img/l9791165343729.jpg" alt="" width="200px" height="300px">                                
                             </a> 
                             <p>
@@ -123,7 +131,7 @@
                             </p>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="http://localhost:8080/book/detail?book_id=6">
                                 <img src="../resources/img/book_img/l9791191056853.jpg" alt="생각을 바꾸는 생각들" width="200px" height="300px">                
                             </a> 
                             <p>
@@ -169,32 +177,12 @@
            
                     </ul>
                 </div><!--.book_report-->
-                
-
-                   
-                     
-                    
-            
-
             </div><!--.board-->
-
-
         </div><!--.container-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>

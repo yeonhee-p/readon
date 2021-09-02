@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="org.readon.domain.MemberVO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,6 +45,9 @@
             cursor: pointer;
         }
 </style>
+<%
+	MemberVO vo = (MemberVO)session.getAttribute("member");
+%>
 </head>
 <body>
 	<div class="login_box">
@@ -58,7 +62,13 @@
 	            </tr>
 	            <tr>
 	                <td colspan="2">
+	                <%
+	                	if(vo == null){
+	                %>
 	                    <input type="submit" value="로그인" formaction="login" class="login_btn" >
+	                <%}else{%>
+	                	<input type="submit" value="로그아웃" formaction="logout" class="login_btn">
+	                <% } %>    
 	                    <input type="submit" value="회원가입" formaction="join" class="login_btn">
 	                </td>
 	            </tr>
