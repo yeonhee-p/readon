@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="org.readon.domain.MemberVO"%>
+<%@page import="org.readon.domain.BookVO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,10 @@
 	<!-- javascript 파일(index.js) 연결 -->
 	<script src="../resources/js/index.js"></script>
 </head>
+<%
+	MemberVO vo = (MemberVO)session.getAttribute("member");
+	BookVO bvo = (BookVO)request.getAttribute("detail");
+%>
 <body>
     <div id="wrap">
         <header class="header">
@@ -21,13 +26,13 @@
                 <h1 class="logo"><a href="#"><img src="../resources/img/logo.png" alt="읽어보다"></a></h1>
                 <nav class="gnb">
                     <ul class="gnb_menu">
-                        <li><a href="#">카테고리</a></li>
+                        <li><a href="http://localhost:8080/book/cat">카테고리</a></li>
                         <li><a href="#">베스트</a></li>
                         <li><a href="http://localhost:8080/board/list">독서노트</a></li>
                         <li><a href="#">마이페이지</a></li>
                     </ul>
                 </nav> <!--.gnb-->
-        		<%MemberVO vo = (MemberVO)session.getAttribute("member"); %>
+        		
                 <div class="utils">
                     <ul class="ut">
                     <li>${member.id}</li><!-- 로그인 시 아이디 -->
@@ -151,33 +156,36 @@
                     <h2 id="title">독서노트</h2>
                     <ul>
                         <li>
-                            <a href=""><img src="../resources/img/book_img/l9791191248265.jpg" alt="오늘의 단어"> </a> 
-	                        <p>
-                        		<strong>생활견 키키와 반려인 진아의 오늘의 단어</strong><br>
-                            	임진아<br><br>
-                            	<b>"오늘은 어떤 단어를 골라볼까?"</b><br><br>
-                            	사계절과 그 계절에 어울리는 단어를 만화로 글로 생각하고 있으면 마음이 포근해지는 느낌이에요.-키키님<br>
-                            	저는 그 중에서도 여름의 커피가 제일 와닿았어요. 밤에 커피마시고 싶어질 때를 위해서 디카페인 마시는 모습이요. -희은님 
-                            </p>
+                            <a href="http://localhost:8080/book/detail?book_id=48">
+                            	<img src="../resources/img/book_img/l9791191248265.jpg" alt="오늘의 단어">
+		                        <p>
+	                        		<strong>생활견 키키와 반려인 진아의 오늘의 단어</strong><br>
+	                            	임진아<br><br>
+	                            	<b>"오늘은 어떤 단어를 골라볼까?"</b><br><br>
+	                            	사계절과 그 계절에 어울리는 단어를 만화로 글로 생각하고 있으면 마음이 포근해지는 느낌이에요.-키키님<br>
+	                            	저는 그 중에서도 여름의 커피가 제일 와닿았어요. 밤에 커피마시고 싶어질 때를 위해서 디카페인 마시는 모습이요. -희은님 
+	                            </p>
+                            </a> 
 						</li>
                         <li>
                             <a href="">
                                 <img src="../resources/img/book_img/l9788934985051.jpg" alt="햇빛은 찬란하고 인생은 귀하니까요: 밀라논나 이야기">
+                            	<p>
+                             		<strong>햇빛은 찬란하고 인생은 귀하니까요: 밀라논나 이야기</strong><br>
+                             		장명숙
+                             		<br><br>
+                            		<b>"누구나 다 주인공이에요"</b><br><br>
+                            		지금 내게 필요한 담백한 응원.-영원님<br>
+                            		하루하루 나에게 충실하게 나를 지키며 살아가자고 다짐하게 만드네요. -이다님<br>
+                            		유튜브보다도 책으로 글로 접하는 밀라논나님의 생각이 더 따스하게 느껴져요 -가애님
+                            	</p>
                             </a> 
-                            <p>
-                             	<strong>햇빛은 찬란하고 인생은 귀하니까요: 밀라논나 이야기</strong><br>
-                             	장명숙
-                             	<br><br>
-                            	<b>"누구나 다 주인공이에요"</b><br><br>
-                            	지금 내게 필요한 담백한 응원.-영원님<br>
-                            	하루하루 나에게 충실하게 나를 지키며 살아가자고 다짐하게 만드네요. -이다님<br>
-                            	유튜브보다도 책으로 글로 접하는 밀라논나님의 생각이 더 따스하게 느껴져요 -가애님
-                            </p>
                         </li>
            
                     </ul>
                 </div><!--.book_report-->
             </div><!--.board-->
+
         </div><!--.container-->
         
         
@@ -187,17 +195,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html> 
-<!-- <div class="sub">
-        <ul>
-            <li><a href="#">소설</a></li>
-            <li><a href="#">시/에세이</a></li>
-            <li><a href="#">경제/경영</a></li>
-            <li><a href="#">자기계발</a></li>
-            <li><a href="#">인문</a></li>
-            <li><a href="#">역사/문화</a></li>
-            <li><a href="#">사회/과학</a></li>
-            <li><a href="#">예술</a></li>
-            <li><a href="#">취미</a></li>
-            <li><a href="#">여행</a></li>
-        </ul>
-    </div>-->

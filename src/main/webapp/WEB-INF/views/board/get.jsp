@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="org.readon.domain.MemberVO"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,28 +15,23 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <div class="board_detail">
-	<div class="book_report">
-		<img src="../resources/img/note.jpg" width="800px">
-		<p>독서 노트를 공유해보세요.</p>
-	</div>
 	<form method="post">
-		<table>
+		<table style="border-collapse:collapse">
 			<tr>
-				<td>게시글 번호</td>
-				<td>
-					${board.bno}<input type="hidden" id="bno" name="bno" value="${board.bno}">
-				</td>
+				<td colspan="2">독서 노트를 공유해보세요.<input type="hidden" id="bno" name="bno" value="${board.bno}"></td>
 			</tr>
 			<tr>
 				<td>제목</td>
 				<td>
-					<input type="text" name="title" value="${board.title}">
+					<input type="text" name="title" value="${board.title}" class="inputBox">
 				</td>
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea rows="20" cols="50" name="content">${board.content}</textarea>
+				<td>
+					<textarea rows="15" cols="85" name="content" class="inputBox">${board.content}</textarea>
 				</td>
 			</tr>
 			<tr>
@@ -45,8 +42,8 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input type="submit" value="수정" formaction="modify">
-					<input type="submit" value="삭제" formaction="remove">
+					<input type="submit" value="수정" formaction="modify" class="inputBtn">
+					<input type="submit" value="삭제" formaction="remove" class="inputBtn">
 				</td>
 			</tr>
 		</table>
@@ -56,18 +53,27 @@
 	<div class="uploadResult">
 		<ul>
 		파일업로드 이미지 출력
-		
 		</ul>	
 	</div>
 	
 	
+		<% MemberVO vo = (MemberVO)session.getAttribute("member");
+			if(vo != null){%>
+			<div>			
+				<textarea rows="3" cols="85" id="reply" class="inputBox"></textarea><br>
+				<input type="hidden" value="${member.id}" id="replyer">
+				<button id="replyadd">댓글</button>
+			</div>
+		<%}else{%>
+			<div class="loginLink">
+				<p>로그인 하셔야 댓글을 작성할 수 있습니다.</p>
+				<p><a href="http://localhost:8080/member/login">로그인</a></p>
+			</div>
+		<%} %>
 	<div>
 		<ul id="replyList"></ul>
 	</div>
-	<div>
-		<textarea rows="3" cols="30" id="reply"></textarea>
-		<button id="replyadd">댓글</button>
-	</div>
+	
 </body>
 </html>
 

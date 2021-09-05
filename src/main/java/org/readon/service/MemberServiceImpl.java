@@ -21,7 +21,6 @@ public class MemberServiceImpl implements MemberService{
 		return mapper.login(mvo);
 	}
 	public MemberVO id_check(String id) {
-		logger.info("member service id_check");
 		return mapper.id_check(id);
 	}
 }

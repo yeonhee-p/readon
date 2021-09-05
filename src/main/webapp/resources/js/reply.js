@@ -6,7 +6,7 @@ $(document).ready(function(){
 	// get.jsp에 있는
 	// bno값 가져오기
 	var bno=$("#bno").val();
-	
+	var replyer=$("#replyer").val();
 	showList();
 	
 	function showList(){
@@ -16,7 +16,7 @@ $(document).ready(function(){
 					var str="";
 					for(var i=0;i<list.length;i++){
 						str+="<li>"+list[i].replyer+"</li>"		// str=str+"<li>"+list[i].replyer+"</li>"
-						str+="<li><textarea rows='3' cols='30' id='modreply"+list[i].rno+"'>"+list[i].reply+"</textarea></li>"		// str=str+"<li>"+list[i].reply+"</li>"
+						str+="<li><textarea rows='3' cols='85' id='modreply"+list[i].rno+"'>"+list[i].reply+"</textarea></li>"		// str=str+"<li>"+list[i].reply+"</li>"
 						str+="<li>"+replyService.displayTime(list[i].replyDate)+"</li>"	// str=str+"<li>"+list[i].replydate+"</li>"
 						str+="<li><button class='replymod' id='replymod' data-rno='"+list[i].rno+"'>댓글수정</button><button class='replydel' data-rno='"+list[i].rno+"'>댓글삭제</button></li>"
 					}
@@ -29,9 +29,10 @@ $(document).ready(function(){
 	$("#replyadd").click(function(e){
 		// reply값 가져오기
 		var reply=$("#reply").val();
+		
 		//replyService.add( {reply:"aaa",replyer:"bbbb",bno:1},function(result){alert("cccccc");});
 		replyService.add(
-				{reply:reply,replyer:"bbbb",bno:bno},
+				{reply:reply,replyer:replyer,bno:bno},
 				function(result){	// insert가 정상적으로 처리된 후 작업(callback)
 					alert("결과는 : "+result);
 					showList();

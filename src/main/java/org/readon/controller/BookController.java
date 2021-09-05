@@ -40,7 +40,11 @@ public class BookController {
 		logger.info("book list");
 		model.addAttribute("list", bookService.getList());
 	}
-	
+	@GetMapping("cat")
+	public void cat(Model model) {
+		logger.info("bookcat");
+		model.addAttribute("list", bookService.getList());
+	}
 	/*@PostMapping("update")
 	public String update(BookVO vo, RedirectAttributes rttr) {
 		logger.info("BookController update");
